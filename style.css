@@ -126,36 +126,52 @@ nav ul li a:hover {
 }
 
 /* ================== MOBILE ================== */
+/* ================== MOBILE ================== */
 .menu-toggle {
   display: none;
   font-size: 28px;
   cursor: pointer;
   color: white;
+  z-index: 1100; /* pastikan di atas nav */
 }
 
-@media(max-width:768px){
-  .menu-toggle { display: block; }
+/* Mobile styles */
+@media (max-width:768px) {
+  .menu-toggle { 
+    display: block; 
+  }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: column; /* vertikal */
+    align-items: flex-start; /* start supaya item rapi */
     background: rgba(0,0,0,0.95);
     position: fixed;
-    top: 70px;
-    right: -100%;
+    top: 70px; /* di bawah navbar */
+    right: -100%; /* sembunyi awalnya */
     width: 60%;
-    height: 100vh;
-    padding-top: 50px;
-    gap: 30px;
+    height: calc(100vh - 70px); /* full height minus navbar */
+    padding-top: 30px;
+    gap: 20px;
+    padding-left: 20px;
+    transition: right 0.4s ease-in-out; /* animasi slide */
+    z-index: 1000;
   }
 
   nav ul.active {
-    right: 0;
+    right: 0; /* muncul */
+  }
+
+  nav ul li {
+    width: 100%; /* supaya link full width */
   }
 
   nav ul li a, .btn-register {
     font-size: 16px;
+    display: block; /* full width clickable */
+    padding: 10px 0;
   }
 }
+
 
 
 .hero{
@@ -873,5 +889,6 @@ left:10px;
 
   position: relative;
 }
+
 
 
