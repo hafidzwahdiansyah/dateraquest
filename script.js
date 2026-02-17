@@ -1,33 +1,24 @@
 /* NAVBAR SCROLL */
-window.addEventListener("scroll", function(){
-document.getElementById("navbar")
-.classList.toggle("scrolled", window.scrollY > 50);
+const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("mobile-menu");
+const navMenu = document.querySelector(".nav-menu");
+
+/* NAVBAR SCROLL EFFECT */
+window.addEventListener("scroll", () => {
+  navbar.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-  const menuToggle = document.getElementById('mobile-menu');
-  const navUl = document.querySelector('nav ul');
+/* TOGGLE MENU */
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
 
-  menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('active');
+/* CLOSE MENU SAAT LINK DIKLIK */
+document.querySelectorAll(".nav-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
   });
-
-  // tutup menu saat klik link
-  document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-      navUl.classList.remove('active');
-    });
-  });
-
-  // Optional: nav background saat scroll
-  window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if(window.scrollY > 50){
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
+});
 
 
 /* COUNTDOWN */
@@ -81,5 +72,6 @@ e.preventDefault();
 document.getElementById("formMessage").innerText =
 "Pendaftaran berhasil! 🚀";
 });
+
 
 
