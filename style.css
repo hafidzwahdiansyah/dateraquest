@@ -355,6 +355,26 @@ font-size:12px;
 
 
 /* ================= ABOUT SECTION ================= */
+/* Already have part of this */
+@media(max-width:900px){
+  .about-container{
+    flex-direction:column;
+    text-align:center;
+  }
+  .about-left img{
+    width:200px;
+    margin-bottom:20px;
+  }
+  .about-right{
+    max-width:100%;
+  }
+}
+@media(max-width:500px){
+  .about-section{ padding:80px 5%; }
+  .about-right h2{ font-size:24px; margin-bottom:20px; }
+  .about-right p{ font-size:14px; }
+  .about-highlight span{ font-size:12px; padding:8px 12px; }
+}
 
 .about-section{
 padding:150px 10%;
@@ -919,12 +939,35 @@ left:10px;
   }
 }
 
-@media(max-width:500px){
-  .kategori-card, .step-card, .sponsor-card{
-    padding:25px 15px;
+.kategori-wrapper{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+@media(max-width:992px){
+  .kategori-wrapper{
+    justify-content:center;
+    gap:30px;
+  }
+  .kategori-card{
+    width:45%; /* 2 per row */
   }
 }
+
+@media(max-width:600px){
+  .kategori-card{
+    width:100%; /* 1 per row */
+    padding:25px 20px;
+  }
+  .kategori-card h3{ font-size:20px; }
+  .kategori-card p{ font-size:13px; }
+  .kategori-icon{ font-size:40px; }
+}
+
 @media(max-width:600px){
   .dq-footer{ font-size:12px; padding:20px 10px; }
 }
+
 
