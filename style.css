@@ -44,157 +44,27 @@ left:0;
 z-index:-2;
 }
 /*NAVBAR*/
-nav {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  z-index: 1000;
-  transition: 0.4s;
-  background: transparent;
-}
-
-nav.scrolled {
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(10px);
-}
-
-.logo {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 14px;
-  color: #FFD93D;
-  text-shadow: 3px 3px 0px #ff00cc;
-}
-
-nav ul {
-  display: flex;
-  gap: 30px;
-  list-style: none;
-  align-items: center;
-  transition: 0.4s;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  position: relative;
-  padding: 5px 0;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(45deg, #ff00cc, #FFD93D);
-  transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-nav ul li a:hover {
-  color: #FFD93D;
-  text-shadow: 0 0 8px #ff00cc, 0 0 6px #FFD93D;
-  transform: scale(1.05);
-}
-
-.btn-register {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 36px;
-  padding: 0 20px;
-  border-radius: 25px;
-  background: linear-gradient(45deg, #ff00cc, #FFD93D);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px #ff00cc, 0 0 20px #FFD93D;
-}
-
-.btn-register:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff00cc, 0 0 30px #FFD93D;
-}
-
-/* ================== MOBILE ================== */
-/* ===== MOBILE NAVBAR ===== */
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: white;
-  z-index: 1100;
-}
-
-/* Mobile */
-@media (max-width:768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    flex-direction: row; /* horizontal */
-    flex-wrap: wrap; /* supaya bisa jatuh baris baru */
-    justify-content: flex-start;
-    align-items: center;
-    background: rgba(0,0,0,0.95);
-    width: 100%;
-    max-height: 0; /* sembunyikan awal */
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    margin-top: 10px;
-    gap: 20px;
-    padding: 0 10px;
-    border-radius: 10px;
-  }
-
-  nav ul.active {
-    max-height: 500px; /* cukup untuk semua menu */
-  }
-
-  nav ul li {
-    margin: 0;
-  }
-
-  nav ul li a, .btn-register {
-    font-size: 16px;
-    padding: 10px 15px;
-    display: inline-block;
-  }
-}
 /* ================= NAVBAR ================= */
 #navbar {
   position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
-  transition: 0.4s;
-  background: transparent;
-}
-
-#navbar.scrolled {
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-}
-
-.nav-container {
+  width: 100%;
+  padding: 18px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 8%;
+  background: transparent;
+  z-index: 1000;
+  transition: 0.3s ease;
 }
 
-/* LOGO */
+#navbar.scrolled {
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(10px);
+}
+
+/* LOGO TETAP PALING KIRI */
 .logo {
   font-family: 'Press Start 2P', cursive;
   font-size: 14px;
@@ -202,7 +72,7 @@ nav ul li a:hover {
   text-shadow: 2px 2px 0px #ff00cc;
 }
 
-/* MENU DESKTOP */
+/* DESKTOP MENU */
 .nav-menu {
   display: flex;
   gap: 30px;
@@ -214,55 +84,32 @@ nav ul li a:hover {
   color: white;
   text-decoration: none;
   position: relative;
-  padding: 5px 0;
   transition: 0.3s;
-}
-
-.nav-menu li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(45deg, #ff00cc, #FFD93D);
-  transition: 0.3s;
-}
-
-.nav-menu li a:hover::after {
-  width: 100%;
 }
 
 .nav-menu li a:hover {
   color: #FFD93D;
-  transform: scale(1.05);
 }
 
 /* BUTTON */
 .btn-register {
-  padding: 8px 20px;
+  padding: 8px 18px;
   border-radius: 25px;
   background: linear-gradient(45deg, #ff00cc, #FFD93D);
-  color: #fff !important;
+  color: white !important;
   font-weight: 600;
-  box-shadow: 0 0 10px #ff00cc;
   transition: 0.3s;
 }
 
-.btn-register:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #ff00cc;
-}
-
-/* ================= MOBILE ================= */
+/* HAMBURGER */
 .menu-toggle {
   display: none;
   font-size: 28px;
-  cursor: pointer;
   color: white;
+  cursor: pointer;
 }
 
-/* TABLET & MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 992px) {
 
   .menu-toggle {
@@ -274,10 +121,10 @@ nav ul li a:hover {
     top: 100%;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg, #1a1a3c, #23235b);
+    background: linear-gradient(180deg, #1a0033, #220044);
     flex-direction: column;
     align-items: flex-start;
-    padding: 30px 8%;
+    padding: 25px 8%;
     gap: 20px;
 
     max-height: 0;
@@ -303,6 +150,7 @@ nav ul li a:hover {
     text-align: center;
   }
 }
+
 
 
 
@@ -1021,6 +869,7 @@ left:10px;
 
   position: relative;
 }
+
 
 
 
