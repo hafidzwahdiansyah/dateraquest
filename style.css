@@ -43,6 +43,38 @@ top:0;
 left:0;
 z-index:-2;
 }
+/* Toggle hamburger button */
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  color:white;
+}
+
+/* Responsive navbar */
+@media(max-width:768px){
+  nav ul{
+    flex-direction: column;
+    position: fixed;
+    top:70px;
+    right:-100%;
+    width:60%;
+    height:100vh;
+    background: rgba(0,0,0,0.95);
+    gap:30px;
+    padding-top:50px;
+    transition:0.4s;
+  }
+  nav ul.active{
+    right:0;
+  }
+  .menu-toggle{
+    display:block;
+  }
+  nav ul li a, .btn-register{
+    font-size:16px;
+  }
+}
 
 nav{
 position:fixed;
@@ -895,3 +927,4 @@ left:10px;
 @media(max-width:600px){
   .dq-footer{ font-size:12px; padding:20px 10px; }
 }
+
