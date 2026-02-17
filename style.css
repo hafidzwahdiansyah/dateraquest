@@ -126,49 +126,49 @@ nav ul li a:hover {
 }
 
 /* ================== MOBILE ================== */
-/* ================== MOBILE ================== */
+/* ===== MOBILE NAVBAR ===== */
 .menu-toggle {
   display: none;
   font-size: 28px;
   cursor: pointer;
   color: white;
-  z-index: 1100; /* pastikan di atas nav */
+  z-index: 1100;
 }
 
-/* Mobile styles */
+/* Mobile */
 @media (max-width:768px) {
-  .menu-toggle { 
-    display: block; 
+  .menu-toggle {
+    display: block;
   }
 
   nav ul {
-    flex-direction: column; /* vertikal */
-    align-items: flex-start; /* start supaya item rapi */
+    flex-direction: row; /* horizontal */
+    flex-wrap: wrap; /* supaya bisa jatuh baris baru */
+    justify-content: flex-start;
+    align-items: center;
     background: rgba(0,0,0,0.95);
-    position: fixed;
-    top: 70px; /* di bawah navbar */
-    right: -100%; /* sembunyi awalnya */
-    width: 60%;
-    height: calc(100vh - 70px); /* full height minus navbar */
-    padding-top: 30px;
+    width: 100%;
+    max-height: 0; /* sembunyikan awal */
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 10px;
     gap: 20px;
-    padding-left: 20px;
-    transition: right 0.4s ease-in-out; /* animasi slide */
-    z-index: 1000;
+    padding: 0 10px;
+    border-radius: 10px;
   }
 
   nav ul.active {
-    right: 0; /* muncul */
+    max-height: 500px; /* cukup untuk semua menu */
   }
 
   nav ul li {
-    width: 100%; /* supaya link full width */
+    margin: 0;
   }
 
   nav ul li a, .btn-register {
     font-size: 16px;
-    display: block; /* full width clickable */
-    padding: 10px 0;
+    padding: 10px 15px;
+    display: inline-block;
   }
 }
 
@@ -889,6 +889,7 @@ left:10px;
 
   position: relative;
 }
+
 
 
 
