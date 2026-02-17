@@ -171,6 +171,138 @@ nav ul li a:hover {
     display: inline-block;
   }
 }
+/* ================= NAVBAR ================= */
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: 0.4s;
+  background: transparent;
+}
+
+#navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+}
+
+/* LOGO */
+.logo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  color: #FFD93D;
+  text-shadow: 2px 2px 0px #ff00cc;
+}
+
+/* MENU DESKTOP */
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(45deg, #ff00cc, #FFD93D);
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+.nav-menu li a:hover {
+  color: #FFD93D;
+  transform: scale(1.05);
+}
+
+/* BUTTON */
+.btn-register {
+  padding: 8px 20px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ff00cc, #FFD93D);
+  color: #fff !important;
+  font-weight: 600;
+  box-shadow: 0 0 10px #ff00cc;
+  transition: 0.3s;
+}
+
+.btn-register:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00cc;
+}
+
+/* ================= MOBILE ================= */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* TABLET & MOBILE */
+@media (max-width: 992px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #1a1a3c, #23235b);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 8%;
+    gap: 20px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-menu.active {
+    max-height: 600px;
+  }
+
+  .nav-menu li {
+    width: 100%;
+  }
+
+  .nav-menu li a {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .btn-register {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 
 
@@ -889,6 +1021,7 @@ left:10px;
 
   position: relative;
 }
+
 
 
 
