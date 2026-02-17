@@ -11,7 +11,7 @@ document.getElementById("navbar")
     navUl.classList.toggle('active');
   });
 
-  // Tutup menu saat klik link (opsional)
+  // tutup menu saat klik link
   document.querySelectorAll('nav ul li a').forEach(link => {
     link.addEventListener('click', () => {
       navUl.classList.remove('active');
@@ -81,4 +81,5 @@ e.preventDefault();
 document.getElementById("formMessage").innerText =
 "Pendaftaran berhasil! 🚀";
 });
+
 
