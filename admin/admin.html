@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Dateraquest</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <h2>DATERAQUEST</h2>
+  </div>
+
+ <nav class="sidebar-menu">
+  <a href="#" class="active">🏠 Dashboard</a>
+  <a href="#">👨‍💼 Petugas</a>
+  <a href="#">👥 Peserta</a>
+  <a href="#">💳 Pembayaran</a>
+  <a href="../index.html">🚪 Logout</a>
+</nav>
+
+</aside>
+
+<!-- Overlay (untuk mobile) -->
+<div class="overlay" onclick="toggleSidebar()"></div>
+
+
+  <!-- Main -->
+  <div class="main-area">
+
+    <header class="topbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </header>
+
+    <section class="content">
+      <h2 class="sidebar-header">Dashboard</h2>
+<br><br>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total Peserta</h3>
+          <p>120</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Kategori</h3>
+          <p>3</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Sponsor</h3>
+          <p>8</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <h2>Data Peserta</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Kategori</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ahmad</td>
+              <td>ahmad@email.com</td>
+              <td>Data Science</td>
+              <td>
+                <button class="btn-edit">Edit</button>
+                <button class="btn-delete">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+  </div>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
