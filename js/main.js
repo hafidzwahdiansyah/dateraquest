@@ -53,6 +53,17 @@ document.querySelectorAll('#mbmenu a').forEach(el => {
     });
 
 });
+const loginCanvas = document.getElementById("lofc");
+
+loginCanvas.addEventListener("hidden.bs.offcanvas", function () {
+
+    document.querySelectorAll(".offcanvas-backdrop").forEach(el => el.remove());
+
+    document.body.classList.remove("modal-open");
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = "";
+
+});
 
 /*  REVEAL  */
 const rvObs = new IntersectionObserver(
