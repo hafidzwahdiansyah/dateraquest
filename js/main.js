@@ -633,3 +633,22 @@ setInterval(() => {
     box.insertBefore(item, box.firstChild);
     if (box.children.length > 5) box.removeChild(box.lastChild);
 }, 5000);
+
+function toggleMobileCategory(){
+
+    const menu = document.getElementById("mobileCategoryMenu");
+    const arrow = document.getElementById("mobileArrow");
+
+    if(menu.style.display==="block"){
+
+        menu.style.display="none";
+        arrow.style.transform="rotate(0deg)";
+
+    }else{
+
+        menu.style.display="block";
+        arrow.style.transform="rotate(180deg)";
+
+    }
+
+}
