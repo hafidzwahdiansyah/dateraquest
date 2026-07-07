@@ -64,7 +64,19 @@ loginCanvas.addEventListener("hidden.bs.offcanvas", function () {
     document.body.style.paddingRight = "";
 
 });
+function openLogin(){
 
+    swTab('login');
+
+    mbOpen = false;
+
+    document.getElementById('mbmenu').classList.remove('open');
+
+    document.getElementById('barIcon').style.display = 'inline';
+
+    document.getElementById('xIcon').style.display = 'none';
+
+}
 /*  REVEAL  */
 const rvObs = new IntersectionObserver(
     entries => entries.forEach(e => {
